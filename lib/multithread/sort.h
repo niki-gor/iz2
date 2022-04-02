@@ -1,3 +1,6 @@
+#ifndef SORT_H
+#define SORT_H
+
 #include <stdlib.h>
 #include <stdbool.h>
 #include <unistd.h>
@@ -25,3 +28,7 @@ typedef struct {
 int min_element_index(void* arg);
 
 void selection_sort(Worker* begin, Worker* end, _Bool (*less)(Worker*, Worker*));
+
+
+
+#endif

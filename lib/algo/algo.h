@@ -7,12 +7,9 @@
 #include <ctype.h>
 #include "worker.h"
 #include "util.h"
+#include "sort.h"
 
 
-
-int min_element_index(void* arg);
-
-void selection_sort(Worker* begin, Worker* end, _Bool (*less)(Worker*, Worker*));
 
 Worker* find_not_eq(Worker* begin, Worker* end, _Bool (*eq)(Worker*, Worker*));
 
@@ -29,9 +26,6 @@ void input_worker(FILE* in, Worker* w);
 void input_workers(FILE* in, Worker* begin, Worker* end);
 
 void input_string(FILE* in, char* s);
-
-void free_worker(Worker* w);
-void free_workers(Worker* begin, Worker* end);
 
 
 

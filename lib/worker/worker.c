@@ -24,3 +24,25 @@ void init_workers(Worker* begin, Worker* end) {
         init_worker(begin);
     }
 }
+
+void free_worker(Worker* w) {
+    if (!w) {
+        return;
+    }
+    if (w->position) {
+        free(w->position);
+    }
+    if (w->surname) {
+        free(w->surname);
+    }
+    if (w->name) {
+        free(w->name);
+    }
+}
+
+void free_workers(Worker* begin, Worker* end) {
+    for (Worker* i = begin; i < end; ++i) {
+        free_worker(i);
+    }
+    free(begin);
+}

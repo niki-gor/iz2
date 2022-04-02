@@ -1,6 +1,7 @@
 #ifndef WORKER_H
 #define WORKER_H
 
+#include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 
@@ -34,6 +35,9 @@ _Bool eq_position(Worker* a, Worker* b);
 
 void init_worker(Worker* w);
 void init_workers(Worker* begin, Worker* end);
+
+void free_worker(Worker* w);
+void free_workers(Worker* begin, Worker* end);
 
 
 

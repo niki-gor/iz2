@@ -3,26 +3,30 @@
 extern "C" {
     #include "algo.h"
     #include "worker.h"
+    #include "sort.h"
+    #include "util.h"
 };
 
 
 
 TEST (INPUT, TEST_INPUT) {
-    char helloworld[] = "    Hello ,    world     ";
-    FILE* in = fmemopen(helloworld, strlen(helloworld), "r");
+    char query[] = "    proger   ivanov  1337  ";
+    FILE* in = fmemopen(query, sizeof(query), "r");
 
-    char* hello;
-    input_string(in, hello);
-    char* comma;
-    input_string(in, comma);
-    char* world;
-    input_string(in, world);
+    Worker w;
+    init_worker(&w);
+    input_worker(in, &w);
 
-    EXPECT_EQ(hello, "Hello");
-    EXPECT_EQ(comma, ",");
-    EXPECT_EQ(world, "world");
+    EXPECT_EQ(w.position, "proger");
+    EXPECT_EQ(w.surname, "ivanov");
+    EXPECT_EQ(w.age, 1337);
 
-    free(hello);
-    free(comma);
-    free(world);  
+    free_worker(&w);
+    fclose(in);
+}
+
+int main(int argc, char **argv)
+{
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }

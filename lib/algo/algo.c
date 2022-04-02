@@ -1,5 +1,4 @@
 #include "algo.h"
-#include <assert.h>
 
 
 
@@ -64,29 +63,8 @@ void input_workers(FILE* in, Worker* begin, Worker* end) {
 
 void input_worker(FILE* in, Worker* w) {
     // вводится только основная информация о работнике, касающаяся запроса
+    // ms нужен для выделения динамической строки
     fscanf(in, "%ms", &w->position);
     fscanf(in, "%ms", &w->surname);
     fscanf(in, "%d", &w->age);
-}
-
-void free_worker(Worker* w) {
-    if (!w) {
-        return;
-    }
-    if (w->position) {
-        free(w->position);
-    }
-    if (w->surname) {
-        free(w->surname);
-    }
-    if (w->name) {
-        free(w->name);
-    }
-}
-
-void free_workers(Worker* begin, Worker* end) {
-    for (Worker* i = begin; i < end; ++i) {
-        free_worker(i);
-    }
-    free(begin);
 }
