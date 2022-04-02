@@ -14,3 +14,13 @@ _Bool compare_surname(Worker* l, Worker* r) {
 _Bool eq_position(Worker* a, Worker* b) {
     return !strcmp(a->position, b->position);
 }
+
+void init_worker(Worker* w) {
+    w->name = w->surname = w->position = NULL;
+}
+
+void init_workers(Worker* begin, Worker* end) {
+    for (; begin < end; ++begin) {
+        init_worker(begin);
+    }
+}
