@@ -3,12 +3,8 @@
 
 
 _Bool compare_position_and_age(Worker* l, Worker* r) {
-    if (strcmp(l->position, r->position) < 0) {
-        return true;
-    }
-    else {
-        return l->age < r->age;
-    }
+    int cmp = strcmp(l->position, r->position);
+    return (cmp == 0 ? l->age < r->age : cmp < 0);
 }
 
 _Bool compare_surname(Worker* l, Worker* r) {

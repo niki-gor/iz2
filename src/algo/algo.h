@@ -50,6 +50,9 @@ void input_workers(FILE* in, Worker* begin, Worker* end);
 
 void input_string(FILE* in, char* s);
 
+void free_worker(Worker* w);
+void free_workers(Worker* begin, Worker* end);
+
 
 
 #endif

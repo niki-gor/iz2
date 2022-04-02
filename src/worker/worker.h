@@ -23,7 +23,7 @@ typedef struct Worker {
     int age;                // 24 + 4 = 28  (кратно 4)
     int salary;             // 28 + 4 = 32  (кратно 32)
     Experience experience;  // 32 + 12 = 44 (кратно 4)
-    Gender gender;            // 44 + 1 = 45
+    Gender gender;          // 44 + 1 = 45
 } Worker;                   // занято 48 байт (если располагать поля как описано в задании, то будет 56)
 
 _Bool compare_position_and_age(Worker* l, Worker* r);
@@ -31,6 +31,9 @@ _Bool compare_position_and_age(Worker* l, Worker* r);
 _Bool compare_surname(Worker* l, Worker* r);
 
 _Bool eq_position(Worker* a, Worker* b);
+
+void init_worker(Worker* w);
+void init_workers(Worker* begin, Worker* end);
 
 
 
