@@ -7,7 +7,10 @@
 int main() {
     const size_t workers_per_position = 3;
 
-    char query[] = "6 ddd       ddd      0         ddd     aaa 0   bbb   bbb 0 aaa    aaa 0 ccc    ccc 0    zzz      zzz 0";
+    char query[] = "8   d  surname 18   \
+     a surname 30   \
+      c z 122     c x 20        c unused1 40  \
+     c unused2 40  c unused3 40  c y 15";
 
     FILE* in = fmemopen(query, sizeof(query), "r");
 
