@@ -14,6 +14,6 @@ Worker* min_element(Worker* begin, Worker* end, _Bool (*less)(Worker*, Worker*))
 
 void selection_sort(Worker* begin, Worker* end, _Bool (*less)(Worker*, Worker*)) {
     for (; begin < end; ++begin) {
-        swap(begin, min_element(begin, end));
+        swap(begin, min_element(begin, end, less));
     }
 }

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-set(MULTITHREADING 1)
+set(MULTITHREADING 0)
 set(TESTS 0)
 
 project(db C CXX)
